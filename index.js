@@ -114,7 +114,7 @@ io.on("connection", (socket) => {
     console.log(role, username, coords);
     deliveryGuys[username] = { id: socket.id, coords }; // Store or update the delivery guy's coordinates
     io.emit("updateLocation", { id: socket.id, coords });
-    io.emit("porterCoords",{username,coords})
+    io.emit("porterCoords", { username, coords });
     // Emit active delivery guys to all admins
     io.emit("activePorters", Object.keys(deliveryGuys)); // Send list of active porters
   });
